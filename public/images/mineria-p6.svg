@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Fondo -->
+  <rect width="800" height="500" fill="#F8F8F8"/>
+
+  <!-- Barra de herramientas superior -->
+  <rect x="0" y="0" width="800" height="40" fill="#2C5AA0"/>
+  <text x="20" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">
+    Activity ID
+  </text>
+  <text x="180" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">
+    Activity Name
+  </text>
+  <text x="450" y="25" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">
+    2025 Q1 Q2 Q3 Q4 | 2026 Q1 Q2 Q3 Q4 | 2027
+  </text>
+
+  <!-- Panel izquierdo - Lista de actividades -->
+  <rect x="0" y="40" width="420" height="460" fill="#FFFFFF"/>
+
+  <!-- Actividades principales (estructura jerárquica) -->
+  <g>
+    <!-- Nivel 1: Categorías principales -->
+    <rect x="10" y="55" width="400" height="30" fill="#4169E1" rx="4"/>
+    <text x="25" y="75" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">
+      PKEE-601 - Chancador Primario - Chancado / Correas
+    </text>
+
+    <rect x="10" y="90" width="400" height="25" fill="#DC143C" rx="4"/>
+    <text x="25" y="107" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">
+      PE-EE-001 - Mina
+    </text>
+
+    <!-- Subactividades expandidas -->
+    <rect x="30" y="120" width="380" height="20" fill="#32CD32"/>
+    <text x="40" y="135" font-family="Arial, sans-serif" font-size="10" fill="#000">
+      PE-211UCC-0060 - Chancado Primario - Cotización, Evaluación y Adjudicación
+    </text>
+
+    <rect x="30" y="145" width="380" height="20" fill="#32CD32"/>
+    <text x="40" y="160" font-family="Arial, sans-serif" font-size="10" fill="#000">
+      PP-21TUCC-0001 - Chancado Primario - Orden de Compra
+    </text>
+
+    <rect x="30" y="170" width="380" height="20" fill="#32CD32"/>
+    <text x="40" y="185" font-family="Arial, sans-serif" font-size="10" fill="#000">
+      PP-21TUCC-0080 - Chancado Primario - Fabricación
+    </text>
+
+    <!-- Más categorías -->
+    <rect x="10" y="200" width="400" height="25" fill="#DC143C" rx="4"/>
+    <text x="25" y="217" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">
+      PE-EE-002 - Planta de Flotación
+    </text>
+
+    <rect x="10" y="230" width="400" height="25" fill="#DC143C" rx="4"/>
+    <text x="25" y="247" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">
+      PE-EE-601 - Construcción / Montaje - Área Húmeda
+    </text>
+
+    <rect x="10" y="260" width="400" height="25" fill="#8B008B" rx="4"/>
+    <text x="25" y="277" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">
+      Moldeo
+    </text>
+
+    <rect x="10" y="290" width="400" height="25" fill="#8B008B" rx="4"/>
+    <text x="25" y="307" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">
+      PP-CC-021 - Construir Área Húmeda
+    </text>
+
+    <rect x="30" y="320" width="380" height="20" fill="#32CD32"/>
+    <text x="40" y="335" font-family="Arial, sans-serif" font-size="10" fill="#000">
+      CT-CC-006 - Construir Sep. Magnética - Molienda
+    </text>
+
+    <rect x="30" y="345" width="380" height="20" fill="#32CD32"/>
+    <text x="40" y="360" font-family="Arial, sans-serif" font-size="10" fill="#000">
+      CD-211MCC-056 - Construir Área Húmeda - Modificación
+    </text>
+  </g>
+
+  <!-- Panel derecho - Diagrama de Gantt -->
+  <rect x="420" y="40" width="380" height="460" fill="#FFFFFF"/>
+
+  <!-- Grid del Gantt -->
+  <g stroke="#E0E0E0" stroke-width="1">
+    <line x1="500" y1="40" x2="500" y2="500"/>
+    <line x1="580" y1="40" x2="580" y2="500"/>
+    <line x1="660" y1="40" x2="660" y2="500"/>
+    <line x1="740" y1="40" x2="740" y2="500"/>
+  </g>
+
+  <!-- Barras de Gantt -->
+  <g>
+    <!-- Barra principal larga -->
+    <rect x="440" y="60" width="340" height="20" fill="#4169E1" rx="3"/>
+    <text x="610" y="74" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF" text-anchor="middle">
+      27/12/27 - Sesión de Compras / Contratos - EFD
+    </text>
+
+    <!-- Barras de tareas -->
+    <rect x="450" y="125" width="180" height="12" fill="#32CD32" rx="2"/>
+    <rect x="455" y="150" width="90" height="12" fill="#32CD32" rx="2"/>
+    <rect x="545" y="150" width="140" height="12" fill="#FFD700" rx="2"/>
+    <rect x="460" y="175" width="200" height="12" fill="#32CD32" rx="2"/>
+
+    <!-- Hitos (diamantes) -->
+    <path d="M470,217 L477,210 L484,217 L477,224 Z" fill="#FF6347"/>
+    <path d="M550,247 L557,240 L564,247 L557,254 Z" fill="#FF6347"/>
+
+    <!-- Más barras -->
+    <rect x="465" y="265" width="160" height="12" fill="#8B008B" rx="2"/>
+    <rect x="470" y="295" width="240" height="12" fill="#8B008B" rx="2"/>
+    <rect x="475" y="325" width="150" height="12" fill="#32CD32" rx="2"/>
+    <rect x="480" y="350" width="180" height="12" fill="#32CD32" rx="2"/>
+
+    <!-- Dependencias (flechas conectoras) -->
+    <line x1="630" y1="131" x2="545" y2="156" stroke="#666" stroke-width="1" stroke-dasharray="2,2"/>
+    <line x1="545" y1="156" x2="660" y2="181" stroke="#666" stroke-width="1" stroke-dasharray="2,2"/>
+  </g>
+
+  <!-- Indicador de fecha actual -->
+  <line x1="650" y1="40" x2="650" y2="500" stroke="#FF0000" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="655" y="55" font-family="Arial, sans-serif" font-size="9" fill="#FF0000">
+    HOY
+  </text>
+</svg>

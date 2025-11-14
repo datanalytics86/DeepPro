@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Fondo -->
+  <rect width="800" height="500" fill="#FAFAFA"/>
+
+  <!-- Panel superior izquierdo - Gráfico de pastel -->
+  <rect x="20" y="20" width="250" height="230" fill="#FFFFFF" rx="8"/>
+  <text x="30" y="45" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    HH Quantity por Type
+  </text>
+  <!-- Gráfico de pastel simulado -->
+  <circle cx="145" cy="140" r="70" fill="#FFD700"/>
+  <path d="M145,140 L215,140 A70,70 0 0,1 180,200 Z" fill="#4169E1"/>
+  <path d="M145,140 L180,200 A70,70 0 0,1 100,180 Z" fill="#32CD32"/>
+  <path d="M145,140 L100,180 A70,70 0 0,1 110,85 Z" fill="#FF6347"/>
+  <path d="M145,140 L110,85 A70,70 0 0,1 215,140 Z" fill="#8B008B"/>
+
+  <!-- Panel superior centro - Gráfico de pastel 2 -->
+  <rect x="290" y="20" width="250" height="230" fill="#FFFFFF" rx="8"/>
+  <text x="300" y="45" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    HH Quantity por Project
+  </text>
+  <!-- Segundo gráfico de pastel -->
+  <circle cx="415" cy="140" r="70" fill="#00CED1"/>
+  <path d="M415,140 L485,140 A70,70 0 0,1 450,200 Z" fill="#FF69B4"/>
+  <path d="M415,140 L450,200 A70,70 0 0,1 370,190 Z" fill="#FFD700"/>
+  <path d="M415,140 L370,190 A70,70 0 0,1 485,140 Z" fill="#4169E1"/>
+
+  <!-- Panel superior derecho - Donut chart -->
+  <rect x="560" y="20" width="220" height="230" fill="#FFFFFF" rx="8"/>
+  <text x="570" y="45" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    Project_Name_Account
+  </text>
+  <!-- Gráfico de dona -->
+  <circle cx="670" cy="140" r="70" fill="#FF6347"/>
+  <circle cx="670" cy="140" r="70" fill="#FFD700" stroke-dasharray="220 440" stroke-dashoffset="0" stroke="#FFD700" stroke-width="60" fill="none"/>
+  <circle cx="670" cy="140" r="70" fill="#4169E1" stroke-dasharray="140 440" stroke-dashoffset="220" stroke="#4169E1" stroke-width="60" fill="none"/>
+  <circle cx="670" cy="140" r="35" fill="#FAFAFA"/>
+
+  <!-- TimeSheet Week selector -->
+  <rect x="20" y="270" width="380" height="40" fill="#FFFFFF" rx="8"/>
+  <text x="30" y="295" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    Timesheet Week
+  </text>
+  <rect x="150" y="280" width="240" height="20" fill="#E0E0E0" rx="10"/>
+  <circle cx="200" cy="290" r="8" fill="#4169E1"/>
+  <circle cx="350" cy="290" r="8" fill="#4169E1"/>
+  <text x="30" y="315" font-family="Arial, sans-serif" font-size="10" fill="#666">
+    29-12-2017 - 07-12-2018
+  </text>
+
+  <!-- Tabla de datos -->
+  <rect x="20" y="320" width="760" height="160" fill="#FFFFFF" rx="8"/>
+  <text x="30" y="345" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">
+    Period / Staff Name / Quantity
+  </text>
+  <!-- Líneas de tabla simuladas -->
+  <line x1="30" y1="355" x2="770" y2="355" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="30" y="360" width="740" height="25" fill="#F5F5F5"/>
+  <text x="40" y="377" font-family="Arial, sans-serif" font-size="11" fill="#333">S01 - Chile Agua</text>
+  <text x="650" y="377" font-family="Arial, sans-serif" font-size="11" fill="#333">12,380.73</text>
+
+  <rect x="30" y="390" width="740" height="25" fill="#FFFFFF"/>
+  <text x="40" y="407" font-family="Arial, sans-serif" font-size="11" fill="#333">S02 - Chile Operaciones Negocio</text>
+  <text x="650" y="407" font-family="Arial, sans-serif" font-size="11" fill="#333">-158.00</text>
+
+  <rect x="30" y="420" width="740" height="25" fill="#F5F5F5"/>
+  <text x="40" y="437" font-family="Arial, sans-serif" font-size="11" fill="#333">S04 - Chile Energía & Recursos</text>
+  <text x="650" y="437" font-family="Arial, sans-serif" font-size="11" fill="#333">4,713.00</text>
+
+  <rect x="30" y="450" width="740" height="25" fill="#FFFFFF"/>
+  <text x="40" y="467" font-family="Arial, sans-serif" font-size="11" fill="#333">M01 - Chile</text>
+  <text x="650" y="467" font-family="Arial, sans-serif" font-size="11" fill="#333">271,151.20</text>
+</svg>
