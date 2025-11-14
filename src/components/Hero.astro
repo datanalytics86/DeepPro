@@ -2,99 +2,164 @@
 // Hero Section Component
 ---
 
-<section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-cyan-50 dark:from-deeppro-dark dark:via-deeppro-dark dark:to-deeppro-dark/95 pt-16">
-  <div class="section-container">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Gradient Mesh Background -->
+  <div class="absolute inset-0 gradient-mesh"></div>
+
+  <!-- Animated gradient orbs -->
+  <div class="absolute top-20 left-10 w-96 h-96 bg-deeppro-cyan/20 rounded-full blur-3xl animate-float"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-glow"></div>
+
+  <!-- Content -->
+  <div class="section-container relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
       <!-- Left Content -->
-      <div class="space-y-8">
-        <div class="space-y-4">
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            <span class="text-gray-900 dark:text-white">Transformando</span>
-            <br />
-            <span class="bg-gradient-to-r from-deeppro-cyan to-blue-600 bg-clip-text text-transparent">
-              Datos en Decisiones
-            </span>
+      <div class="space-y-10 observe-fade opacity-0">
+        <!-- Eyebrow -->
+        <div class="inline-flex items-center space-x-2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl px-6 py-3 rounded-full border border-deeppro-cyan/30 shadow-lg">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-deeppro-cyan opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-deeppro-cyan"></span>
+          </span>
+          <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">Business Intelligence Accesible</span>
+        </div>
+
+        <!-- Main Headline -->
+        <div class="space-y-6">
+          <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight">
+            <span class="block text-gray-900 dark:text-white">Transformando</span>
+            <span class="block gradient-text mt-2">Datos en</span>
+            <span class="block gradient-text">Decisiones</span>
           </h1>
-          <p class="text-xl md:text-2xl text-gray-600 dark:text-deeppro-gray max-w-xl">
-            Soluciones de Business Intelligence accesibles y prácticas para empresas que buscan resultados sin la complejidad de grandes ERP.
+
+          <p class="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed font-light">
+            Soluciones de <span class="font-semibold text-deeppro-cyan">Business Intelligence</span> prácticas y accesibles
+            para empresas que buscan resultados sin complejidad.
           </p>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#casos" class="btn-primary text-center">
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="#casos" class="btn-primary text-center group">
             Ver Casos de Éxito
+            <svg class="inline-block w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
           </a>
-          <a href="#contacto" class="btn-secondary text-center">
+          <a href="#contacto" class="btn-secondary text-center group">
             Trabajemos Juntos
+            <svg class="inline-block w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
           </a>
         </div>
 
-        <!-- Stats -->
-        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200 dark:border-gray-800">
-          <div>
-            <div class="text-3xl font-bold text-deeppro-cyan">10+</div>
-            <div class="text-sm text-gray-600 dark:text-deeppro-gray">Proyectos</div>
+        <!-- Stats with glass cards -->
+        <div class="grid grid-cols-3 gap-6 pt-8">
+          <div class="glass-card p-6 hover-lift">
+            <div class="text-4xl font-bold gradient-text">15+</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400 mt-2">Años Experiencia</div>
           </div>
-          <div>
-            <div class="text-3xl font-bold text-deeppro-cyan">100%</div>
-            <div class="text-sm text-gray-600 dark:text-deeppro-gray">Satisfacción</div>
+          <div class="glass-card p-6 hover-lift stagger-1">
+            <div class="text-4xl font-bold gradient-text">50+</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400 mt-2">Proyectos</div>
           </div>
-          <div>
-            <div class="text-3xl font-bold text-deeppro-cyan">15+</div>
-            <div class="text-sm text-gray-600 dark:text-deeppro-gray">Años Exp.</div>
+          <div class="glass-card p-6 hover-lift stagger-2">
+            <div class="text-4xl font-bold gradient-text">100%</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400 mt-2">Satisfacción</div>
           </div>
         </div>
       </div>
 
-      <!-- Right Visual -->
-      <div class="relative">
-        <div class="relative z-10">
-          <!-- Dashboard Mockup -->
-          <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-6 space-y-4 border border-gray-200 dark:border-gray-700">
-            <!-- Header -->
-            <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-700">
-              <div class="flex items-center space-x-3">
-                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+      <!-- Right Visual - Premium Dashboard -->
+      <div class="relative observe-fade opacity-0 stagger-2">
+        <!-- Main Dashboard Card -->
+        <div class="relative z-10 glass-card p-8 transform hover:scale-105 transition-all duration-700">
+          <!-- Window Controls -->
+          <div class="flex items-center justify-between pb-6 border-b border-gray-200/50 dark:border-gray-700/50">
+            <div class="flex items-center space-x-3">
+              <div class="w-3 h-3 rounded-full bg-red-500 shadow-lg"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500 shadow-lg"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500 shadow-lg"></div>
+            </div>
+            <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+              <span class="font-medium">Power BI Dashboard</span>
+            </div>
+          </div>
+
+          <!-- Chart Area -->
+          <div class="mt-6 space-y-6">
+            <!-- Metric Cards -->
+            <div class="grid grid-cols-3 gap-4">
+              <div class="bg-gradient-to-br from-deeppro-cyan/20 to-blue-500/20 rounded-xl p-4 border border-deeppro-cyan/30">
+                <div class="text-2xl font-bold text-gray-900 dark:text-white">87%</div>
+                <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Eficiencia</div>
               </div>
-              <span class="text-sm text-gray-500 dark:text-gray-400">Dashboard</span>
+              <div class="bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-xl p-4 border border-green-500/30">
+                <div class="text-2xl font-bold text-gray-900 dark:text-white">↑ 23%</div>
+                <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Crecimiento</div>
+              </div>
+              <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-4 border border-purple-500/30">
+                <div class="text-2xl font-bold text-gray-900 dark:text-white">$2.4M</div>
+                <div class="text-xs text-gray-600 dark:text-gray-400 mt-1">Revenue</div>
+              </div>
             </div>
 
-            <!-- Chart Placeholder -->
+            <!-- Bar Chart -->
             <div class="space-y-3">
-              <div class="h-8 bg-gradient-to-r from-deeppro-cyan/20 to-blue-500/20 rounded"></div>
-              <div class="grid grid-cols-3 gap-3">
-                <div class="h-24 bg-gradient-to-br from-deeppro-cyan/30 to-deeppro-cyan/10 rounded flex items-end p-2">
-                  <div class="w-full h-3/4 bg-deeppro-cyan rounded-t"></div>
+              <div class="flex items-center gap-4">
+                <div class="w-20 text-xs text-gray-600 dark:text-gray-400">Q1 2024</div>
+                <div class="flex-1 h-8 bg-gradient-to-r from-deeppro-cyan to-blue-500 rounded-lg relative overflow-hidden" style="width: 85%">
+                  <div class="absolute inset-0 shimmer"></div>
                 </div>
-                <div class="h-24 bg-gradient-to-br from-blue-500/30 to-blue-500/10 rounded flex items-end p-2">
-                  <div class="w-full h-1/2 bg-blue-500 rounded-t"></div>
-                </div>
-                <div class="h-24 bg-gradient-to-br from-purple-500/30 to-purple-500/10 rounded flex items-end p-2">
-                  <div class="w-full h-2/3 bg-purple-500 rounded-t"></div>
-                </div>
+                <div class="w-12 text-xs font-semibold text-gray-700 dark:text-gray-300">85%</div>
               </div>
-              <div class="space-y-2">
-                <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
-                <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
+              <div class="flex items-center gap-4">
+                <div class="w-20 text-xs text-gray-600 dark:text-gray-400">Q2 2024</div>
+                <div class="flex-1 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg relative overflow-hidden" style="width: 72%">
+                  <div class="absolute inset-0 shimmer" style="animation-delay: 0.5s;"></div>
+                </div>
+                <div class="w-12 text-xs font-semibold text-gray-700 dark:text-gray-300">72%</div>
               </div>
+              <div class="flex items-center gap-4">
+                <div class="w-20 text-xs text-gray-600 dark:text-gray-400">Q3 2024</div>
+                <div class="flex-1 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg relative overflow-hidden" style="width: 94%">
+                  <div class="absolute inset-0 shimmer" style="animation-delay: 1s;"></div>
+                </div>
+                <div class="w-12 text-xs font-semibold text-gray-700 dark:text-gray-300">94%</div>
+              </div>
+            </div>
+
+            <!-- Line Chart Visualization -->
+            <div class="h-32 flex items-end gap-2 border-t border-gray-200/50 dark:border-gray-700/50 pt-4">
+              <div class="flex-1 bg-gradient-to-t from-deeppro-cyan/40 to-deeppro-cyan/10 rounded-t-lg" style="height: 60%"></div>
+              <div class="flex-1 bg-gradient-to-t from-deeppro-cyan/40 to-deeppro-cyan/10 rounded-t-lg" style="height: 75%"></div>
+              <div class="flex-1 bg-gradient-to-t from-deeppro-cyan/40 to-deeppro-cyan/10 rounded-t-lg" style="height: 55%"></div>
+              <div class="flex-1 bg-gradient-to-t from-deeppro-cyan/40 to-deeppro-cyan/10 rounded-t-lg" style="height: 85%"></div>
+              <div class="flex-1 bg-gradient-to-t from-deeppro-cyan/40 to-deeppro-cyan/10 rounded-t-lg" style="height: 70%"></div>
+              <div class="flex-1 bg-gradient-to-t from-deeppro-cyan/40 to-deeppro-cyan/10 rounded-t-lg" style="height: 90%"></div>
+              <div class="flex-1 bg-gradient-to-t from-deeppro-cyan/40 to-deeppro-cyan/10 rounded-t-lg" style="height: 100%"></div>
             </div>
           </div>
         </div>
 
-        <!-- Background Decoration -->
-        <div class="absolute -top-4 -right-4 w-72 h-72 bg-deeppro-cyan/10 rounded-full blur-3xl -z-0"></div>
-        <div class="absolute -bottom-4 -left-4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl -z-0"></div>
+        <!-- Floating elements -->
+        <div class="absolute -top-8 -right-8 w-32 h-32 bg-deeppro-cyan/20 rounded-2xl blur-2xl animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-500/20 rounded-2xl blur-2xl animate-float" style="animation-delay: 3s;"></div>
       </div>
     </div>
 
     <!-- Scroll Indicator -->
-    <div class="flex justify-center mt-16">
-      <a href="#sobre-mi" class="animate-bounce">
-        <svg class="w-6 h-6 text-deeppro-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
+    <div class="flex justify-center mt-20">
+      <a href="#sobre-mi" class="group flex flex-col items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-deeppro-cyan transition-colors">
+        <span class="text-sm font-medium">Explorar más</span>
+        <div class="w-6 h-10 border-2 border-current rounded-full flex items-start justify-center p-2">
+          <div class="w-1 h-3 bg-current rounded-full animate-bounce"></div>
+        </div>
       </a>
     </div>
   </div>
