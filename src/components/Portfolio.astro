@@ -181,17 +181,18 @@ const categories = ["Todos", "Power BI", "Análisis Financiero", "Recursos Human
 
       // Filter cards
       casosCards.forEach(card => {
+        const htmlCard = card as HTMLElement;
         if (filter === 'Todos' || card.getAttribute('data-category') === filter) {
-          card.style.display = 'block';
+          htmlCard.style.display = 'block';
           setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'scale(1)';
+            htmlCard.style.opacity = '1';
+            htmlCard.style.transform = 'scale(1)';
           }, 10);
         } else {
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.9)';
+          htmlCard.style.opacity = '0';
+          htmlCard.style.transform = 'scale(0.9)';
           setTimeout(() => {
-            card.style.display = 'none';
+            htmlCard.style.display = 'none';
           }, 300);
         }
       });
