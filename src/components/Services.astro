@@ -1,0 +1,105 @@
+---
+// Services Section
+const services = [
+  {
+    title: "Implementación Power BI",
+    description: "Diseño y desarrollo de dashboards profesionales que transforman datos complejos en insights accionables. Transición gradual desde Excel.",
+    icon: "chart",
+    features: ["Dashboards interactivos", "Modelado de datos", "Capacitación equipo", "Soporte continuo"]
+  },
+  {
+    title: "Gestión de Proyectos",
+    description: "Planificación y control de proyectos con Primavera P6. Seguimiento de cronogramas, recursos y presupuestos en tiempo real.",
+    icon: "project",
+    features: ["Primavera P6", "Control de avance", "Gestión de recursos", "Reportabilidad ejecutiva"]
+  },
+  {
+    title: "Análisis de Datos",
+    description: "Análisis profundo de datos operacionales y financieros. Identificación de patrones, tendencias y oportunidades de mejora.",
+    icon: "analytics",
+    features: ["KPIs personalizados", "Análisis predictivo", "Optimización procesos", "Reportes automatizados"]
+  },
+  {
+    title: "Excel Avanzado",
+    description: "Optimización de planillas Excel existentes. Automatización con macros, modelado de datos y preparación para migración a BI.",
+    icon: "excel",
+    features: ["Automatización VBA", "Tablas dinámicas", "Power Query", "Validación de datos"]
+  }
+];
+---
+
+<section id="servicios" class="section-container bg-gray-50 dark:bg-deeppro-dark/50 observe-fade">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">Servicios</h2>
+      <p class="section-subtitle mt-4">
+        Soluciones integrales para la gestión de datos y proyectos
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-2 gap-8">
+      {services.map((service) => (
+        <div class="card group hover:scale-105 transition-transform duration-300">
+          <!-- Icon -->
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-deeppro-cyan to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              {service.icon === 'chart' && (
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                </svg>
+              )}
+              {service.icon === 'project' && (
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                </svg>
+              )}
+              {service.icon === 'analytics' && (
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                </svg>
+              )}
+              {service.icon === 'excel' && (
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+              )}
+            </div>
+          </div>
+
+          <!-- Content -->
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+            {service.title}
+          </h3>
+          <p class="text-gray-600 dark:text-deeppro-gray mb-6">
+            {service.description}
+          </p>
+
+          <!-- Features -->
+          <ul class="space-y-2">
+            {service.features.map((feature) => (
+              <li class="flex items-center space-x-2 text-gray-700 dark:text-deeppro-gray">
+                <svg class="w-5 h-5 text-deeppro-cyan flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <p class="text-gray-600 dark:text-deeppro-gray mb-6">
+        ¿Necesitas una solución personalizada?
+      </p>
+      <a href="#contacto" class="btn-primary inline-block">
+        Conversemos sobre tu proyecto
+      </a>
+    </div>
+  </div>
+</section>

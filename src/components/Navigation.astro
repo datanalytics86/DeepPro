@@ -1,0 +1,74 @@
+---
+// Navigation component
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-deeppro-dark/80 backdrop-blur-md shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center space-x-2">
+        <div class="w-10 h-10 bg-gradient-to-br from-deeppro-cyan to-blue-600 rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-xl">D</span>
+        </div>
+        <span class="font-bold text-xl text-gray-900 dark:text-white">DeepPro</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#sobre-mi" class="text-gray-700 dark:text-deeppro-gray hover:text-deeppro-cyan dark:hover:text-deeppro-cyan transition-colors">
+          Sobre Mí
+        </a>
+        <a href="#servicios" class="text-gray-700 dark:text-deeppro-gray hover:text-deeppro-cyan dark:hover:text-deeppro-cyan transition-colors">
+          Servicios
+        </a>
+        <a href="#casos" class="text-gray-700 dark:text-deeppro-gray hover:text-deeppro-cyan dark:hover:text-deeppro-cyan transition-colors">
+          Casos de Éxito
+        </a>
+        <a href="#contacto" class="text-gray-700 dark:text-deeppro-gray hover:text-deeppro-cyan dark:hover:text-deeppro-cyan transition-colors">
+          Contacto
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-deeppro-dark border-t dark:border-gray-800">
+    <div class="px-4 py-4 space-y-3">
+      <a href="#sobre-mi" class="block py-2 text-gray-700 dark:text-deeppro-gray hover:text-deeppro-cyan">
+        Sobre Mí
+      </a>
+      <a href="#servicios" class="block py-2 text-gray-700 dark:text-deeppro-gray hover:text-deeppro-cyan">
+        Servicios
+      </a>
+      <a href="#casos" class="block py-2 text-gray-700 dark:text-deeppro-gray hover:text-deeppro-cyan">
+        Casos de Éxito
+      </a>
+      <a href="#contacto" class="block py-2 text-gray-700 dark:text-deeppro-gray hover:text-deeppro-cyan">
+        Contacto
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking on a link
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white dark:bg-deeppro-dark text-gray-900 dark:text-deeppro-light-gray;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  .btn-primary {
+    @apply bg-deeppro-cyan hover:bg-deeppro-cyan/90 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-deeppro-cyan text-deeppro-cyan hover:bg-deeppro-cyan hover:text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white dark:bg-deeppro-dark/50 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-800;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-deeppro-cyan to-blue-600 bg-clip-text text-transparent;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600 dark:text-deeppro-gray max-w-3xl mx-auto;
+  }
+}
+
+/* Smooth scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}

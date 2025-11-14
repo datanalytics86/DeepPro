@@ -1,0 +1,211 @@
+---
+// Portfolio / Casos de Éxito Section
+const casos = [
+  {
+    title: "Dashboard de Producción",
+    client: "Empresa Productiva",
+    description: "Sistema integral de monitoreo de producción en tiempo real con KPIs operacionales, análisis de eficiencia y detección de cuellos de botella.",
+    technologies: ["Power BI", "Excel", "Power Query", "DAX"],
+    results: [
+      "Reducción 30% en tiempo de reportes",
+      "Visibilidad en tiempo real",
+      "Identificación proactiva de problemas"
+    ],
+    image: "produccion",
+    category: "Power BI"
+  },
+  {
+    title: "Control de Flujo de Caja",
+    client: "Proyectos Industriales",
+    description: "Herramienta de control financiero para gestión de múltiples proyectos simultáneos, con proyecciones y alertas automáticas de desviaciones.",
+    technologies: ["Power BI", "Excel", "SQL", "Power Pivot"],
+    results: [
+      "Control preciso de cash flow",
+      "Alertas tempranas de desviaciones",
+      "Proyecciones automatizadas"
+    ],
+    image: "flujo-caja",
+    category: "Análisis Financiero"
+  },
+  {
+    title: "Control de Horas Hombre",
+    client: "Empresa de Ingeniería",
+    description: "Sistema de seguimiento y análisis de recursos humanos en proyectos de ingeniería, optimizando asignación y costos.",
+    technologies: ["Power BI", "Excel", "VBA", "DAX"],
+    results: [
+      "Optimización 25% en asignación",
+      "Reducción de sobrecostos",
+      "Visibilidad por proyecto y área"
+    ],
+    image: "hh-ingenieria",
+    category: "Recursos Humanos"
+  },
+  {
+    title: "Programa Minero P6",
+    client: "Proyecto Minero",
+    description: "Implementación completa de Primavera P6 para gestión de programa de construcción minera, con control integrado de cronograma y recursos.",
+    technologies: ["Primavera P6", "Power BI", "Excel", "MS Project"],
+    results: [
+      "Control de 200+ actividades",
+      "Integración con equipos externos",
+      "Reportabilidad ejecutiva automatizada"
+    ],
+    image: "mineria-p6",
+    category: "Gestión de Proyectos"
+  }
+];
+
+const categories = ["Todos", "Power BI", "Análisis Financiero", "Recursos Humanos", "Gestión de Proyectos"];
+---
+
+<section id="casos" class="section-container bg-white dark:bg-deeppro-dark observe-fade">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">Casos de Éxito</h2>
+      <p class="section-subtitle mt-4">
+        Proyectos reales que han transformado la gestión de datos en empresas chilenas
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      {categories.map((category) => (
+        <button
+          data-filter={category}
+          class="filter-btn px-6 py-2 rounded-lg font-medium transition-all duration-300 border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-deeppro-gray hover:border-deeppro-cyan hover:text-deeppro-cyan"
+        >
+          {category}
+        </button>
+      ))}
+    </div>
+
+    <!-- Cases Grid -->
+    <div class="grid md:grid-cols-2 gap-8" id="casos-grid">
+      {casos.map((caso) => (
+        <article
+          data-category={caso.category}
+          class="caso-card card group cursor-pointer overflow-hidden"
+        >
+          <!-- Image Placeholder -->
+          <div class="relative h-48 -mx-6 -mt-6 mb-6 bg-gradient-to-br from-deeppro-cyan/20 to-blue-600/20 overflow-hidden">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center space-y-2">
+                <div class="w-20 h-20 mx-auto bg-white/90 dark:bg-deeppro-dark/90 rounded-xl flex items-center justify-center">
+                  {caso.category === 'Power BI' && (
+                    <svg class="w-10 h-10 text-deeppro-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                  )}
+                  {caso.category === 'Análisis Financiero' && (
+                    <svg class="w-10 h-10 text-deeppro-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  )}
+                  {caso.category === 'Recursos Humanos' && (
+                    <svg class="w-10 h-10 text-deeppro-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                  )}
+                  {caso.category === 'Gestión de Proyectos' && (
+                    <svg class="w-10 h-10 text-deeppro-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                    </svg>
+                  )}
+                </div>
+                <span class="text-sm font-semibold text-gray-700 dark:text-gray-300">{caso.category}</span>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-deeppro-dark to-transparent opacity-50"></div>
+          </div>
+
+          <!-- Content -->
+          <div class="space-y-4">
+            <div>
+              <span class="text-sm text-deeppro-cyan font-semibold">{caso.client}</span>
+              <h3 class="text-2xl font-bold text-gray-900 dark:text-white mt-1 group-hover:text-deeppro-cyan transition-colors">
+                {caso.title}
+              </h3>
+            </div>
+
+            <p class="text-gray-600 dark:text-deeppro-gray">
+              {caso.description}
+            </p>
+
+            <!-- Technologies -->
+            <div class="flex flex-wrap gap-2">
+              {caso.technologies.map((tech) => (
+                <span class="px-3 py-1 text-xs font-medium bg-deeppro-cyan/10 text-deeppro-cyan rounded-full">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <!-- Results -->
+            <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+              <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">Resultados:</h4>
+              <ul class="space-y-1">
+                {caso.results.map((result) => (
+                  <li class="flex items-start space-x-2 text-sm text-gray-700 dark:text-deeppro-gray">
+                    <svg class="w-4 h-4 text-deeppro-cyan mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>{result}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Filter functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const casosCards = document.querySelectorAll('.caso-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+
+      // Update active button
+      filterButtons.forEach(btn => {
+        btn.classList.remove('border-deeppro-cyan', 'text-deeppro-cyan', 'bg-deeppro-cyan/10');
+        btn.classList.add('border-gray-200', 'dark:border-gray-700');
+      });
+      button.classList.add('border-deeppro-cyan', 'text-deeppro-cyan', 'bg-deeppro-cyan/10');
+      button.classList.remove('border-gray-200', 'dark:border-gray-700');
+
+      // Filter cards
+      casosCards.forEach(card => {
+        if (filter === 'Todos' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.9)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+
+  // Set "Todos" as active by default
+  filterButtons[0]?.classList.add('border-deeppro-cyan', 'text-deeppro-cyan', 'bg-deeppro-cyan/10');
+</script>
+
+<style>
+  .caso-card {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+  }
+</style>
