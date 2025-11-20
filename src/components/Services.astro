@@ -38,13 +38,14 @@ const services = [
       </p>
     </div>
 
-    <!-- Services Grid -->
-    <div class="grid md:grid-cols-2 gap-8">
+    <!-- Services Grid with stagger animation -->
+    <div class="grid md:grid-cols-2 gap-8" data-stagger>
       {services.map((service) => (
-        <div class="card group hover:scale-105 transition-transform duration-300">
-          <!-- Icon -->
+        <div class="card tilt-card spotlight-card group" data-stagger-item>
+          <div class="tilt-card-glow"></div>
+          <!-- Icon with glow pulse -->
           <div class="mb-6">
-            <div class="w-16 h-16 bg-gradient-to-br from-deeppro-cyan to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div class="w-16 h-16 bg-gradient-to-br from-deeppro-cyan to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform glow-pulse">
               {service.icon === 'chart' && (
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
@@ -92,12 +93,12 @@ const services = [
       ))}
     </div>
 
-    <!-- CTA -->
+    <!-- CTA with magnetic button -->
     <div class="text-center mt-12">
-      <p class="text-gray-600 dark:text-deeppro-gray mb-6">
+      <p class="text-gray-600 dark:text-deeppro-gray mb-6 text-lg">
         ¿Necesitas una solución personalizada?
       </p>
-      <a href="#contacto" class="btn-primary inline-block">
+      <a href="#contacto" class="btn-primary magnetic-btn inline-block">
         Conversemos sobre tu proyecto
       </a>
     </div>

@@ -41,7 +41,7 @@ const {
     <slot />
 
     <script>
-      // Smooth scroll for anchor links
+      // ========== SMOOTH SCROLL FOR ANCHOR LINKS ==========
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
           e.preventDefault();
@@ -55,7 +55,18 @@ const {
         });
       });
 
-      // Intersection Observer for fade-in animations
+      // ========== SCROLL PROGRESS BAR ==========
+      const progressBar = document.createElement('div');
+      progressBar.className = 'scroll-progress';
+      document.body.appendChild(progressBar);
+
+      window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.transform = `scaleX(${scrolled / 100})`;
+      });
+
+      // ========== ENHANCED INTERSECTION OBSERVER ==========
       const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
@@ -64,13 +75,190 @@ const {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
+            entry.target.classList.add('smooth-reveal');
             observer.unobserve(entry.target);
           }
         });
       }, observerOptions);
 
       document.querySelectorAll('.observe-fade').forEach(el => observer.observe(el));
+
+      // ========== PARALLAX SCROLL EFFECT ==========
+      const parallaxElements = document.querySelectorAll('.parallax-slow, .parallax-medium, .parallax-fast');
+
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+
+        parallaxElements.forEach(el => {
+          const htmlEl = el as HTMLElement;
+          const speed = el.classList.contains('parallax-slow') ? 0.3 :
+                       el.classList.contains('parallax-medium') ? 0.5 : 0.7;
+          const yPos = -(scrolled * speed);
+          htmlEl.style.transform = `translate3d(0, ${yPos}px, 0)`;
+        });
+      });
+
+      // ========== SPOTLIGHT CARD EFFECT ==========
+      document.querySelectorAll('.spotlight-card').forEach(card => {
+        const htmlCard = card as HTMLElement;
+        card.addEventListener('mousemove', (e) => {
+          const mouseEvent = e as MouseEvent;
+          const rect = card.getBoundingClientRect();
+          const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
+          const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
+          htmlCard.style.setProperty('--mouse-x', `${x}%`);
+          htmlCard.style.setProperty('--mouse-y', `${y}%`);
+        });
+      });
+
+      // ========== 3D TILT CARD EFFECT ==========
+      document.querySelectorAll('.tilt-card').forEach(card => {
+        const htmlCard = card as HTMLElement;
+        card.addEventListener('mousemove', (e) => {
+          const mouseEvent = e as MouseEvent;
+          const rect = card.getBoundingClientRect();
+          const x = mouseEvent.clientX - rect.left;
+          const y = mouseEvent.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = (y - centerY) / 10;
+          const rotateY = (centerX - x) / 10;
+
+          htmlCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+          // Update glow position
+          const percentX = (x / rect.width) * 100;
+          const percentY = (y / rect.height) * 100;
+          htmlCard.style.setProperty('--mouse-x', `${percentX}%`);
+          htmlCard.style.setProperty('--mouse-y', `${percentY}%`);
+        });
+
+        card.addEventListener('mouseleave', () => {
+          htmlCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        });
+      });
+
+      // ========== MAGNETIC BUTTON EFFECT ==========
+      document.querySelectorAll('.magnetic-btn').forEach(btn => {
+        const htmlBtn = btn as HTMLElement;
+        btn.addEventListener('mousemove', (e) => {
+          const mouseEvent = e as MouseEvent;
+          const rect = btn.getBoundingClientRect();
+          const x = mouseEvent.clientX - rect.left - rect.width / 2;
+          const y = mouseEvent.clientY - rect.top - rect.height / 2;
+
+          htmlBtn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+          htmlBtn.style.transform = 'translate(0, 0)';
+        });
+      });
+
+      // ========== RIPPLE EFFECT ON CLICK ==========
+      document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const mouseEvent = e as MouseEvent;
+          const ripple = document.createElement('span');
+          ripple.classList.add('ripple');
+
+          const rect = btn.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = mouseEvent.clientX - rect.left - size / 2;
+          const y = mouseEvent.clientY - rect.top - size / 2;
+
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = x + 'px';
+          ripple.style.top = y + 'px';
+
+          btn.appendChild(ripple);
+
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+
+      // ========== ANIMATED COUNTER FOR NUMBERS ==========
+      const animateCounter = (el: HTMLElement) => {
+        const countAttr = el.getAttribute('data-count');
+        if (!countAttr) return;
+
+        const target = parseFloat(countAttr);
+        const duration = 2000;
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            el.textContent = Math.floor(current) + (el.textContent?.includes('%') ? '%' : el.textContent?.includes('+') ? '+' : '');
+            requestAnimationFrame(updateCounter);
+          } else {
+            el.textContent = countAttr;
+          }
+        };
+
+        updateCounter();
+      };
+
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+            entry.target.classList.add('counted');
+            animateCounter(entry.target as HTMLElement);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+      // ========== CURSOR TRAIL EFFECT (OPTIONAL) ==========
+      let cursorTrail = [];
+      const maxTrailLength = 20;
+
+      document.addEventListener('mousemove', (e) => {
+        if (window.innerWidth < 768) return; // Skip on mobile
+
+        const trail = document.createElement('div');
+        trail.className = 'fixed w-1 h-1 bg-deeppro-cyan rounded-full pointer-events-none z-50';
+        trail.style.left = e.clientX + 'px';
+        trail.style.top = e.clientY + 'px';
+        trail.style.opacity = '0.6';
+        trail.style.transition = 'all 0.5s ease-out';
+
+        document.body.appendChild(trail);
+        cursorTrail.push(trail);
+
+        if (cursorTrail.length > maxTrailLength) {
+          const oldTrail = cursorTrail.shift();
+          oldTrail?.remove();
+        }
+
+        setTimeout(() => {
+          trail.style.opacity = '0';
+          trail.style.transform = 'scale(0)';
+        }, 100);
+
+        setTimeout(() => trail.remove(), 600);
+      });
+
+      // ========== SMOOTH STAGGER ANIMATIONS ==========
+      document.querySelectorAll('[data-stagger]').forEach((container) => {
+        const children = container.querySelectorAll('[data-stagger-item]');
+        children.forEach((child, index) => {
+          const htmlChild = child as HTMLElement;
+          htmlChild.style.opacity = '0';
+          htmlChild.style.transform = 'translateY(20px)';
+
+          setTimeout(() => {
+            htmlChild.style.transition = 'all 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+            htmlChild.style.opacity = '1';
+            htmlChild.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+      });
     </script>
   </body>
 </html>
